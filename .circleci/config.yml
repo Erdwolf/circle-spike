@@ -1,5 +1,8 @@
 version: 2
 jobs:
+workflows:
+  version: 2
+  build_and_test:
   build:
     docker:
       - image: circleci/node:9
@@ -14,10 +17,3 @@ jobs:
     steps:
       - checkout
       - run: nove -v
-workflows:
-  version: 2
-  build_and_test:
-    jobs:
-      - build
-      - hold
-      - test
