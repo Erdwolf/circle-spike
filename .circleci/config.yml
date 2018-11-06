@@ -16,4 +16,4 @@ workflows:
       - image: circleci/node:7
     steps:
       - checkout
-      - run: nove -v
+      - run: node -v
