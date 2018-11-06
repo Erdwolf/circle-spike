@@ -1,14 +1,8 @@
 version: 2
 jobs:
-  build:
+  deploy:
     docker:
-      - image: circleci/node:9
+      - image: mesosphere/aws-cli
     steps:
       - checkout
-      - run: node -v
-  test:
-    docker:
-      - image: circleci/node:7
-    steps:
-      - checkout
-      - run: node -v
+      - run: s3 cp --acl public-read README.md s3://erdwolf/
