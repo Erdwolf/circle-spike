@@ -5,4 +5,4 @@ jobs:
       - image: mesosphere/aws-cli
     steps:
       - checkout
-      - run: aws s3 cp --acl public-read README.md s3://erdwolf/
+      - run: aws s3 sync --acl public-read *.md s3://erdwolf/
